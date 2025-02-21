@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../js/script_menu.js"></script>
+    <script src="../js/script_apartados.js"></script>
+    <script src="../js/script_detalles.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        #logo{
+            filter: invert(0);
+        }
+        .sdo{
+          margin-top: 0;
+          height: 80vh !important;
+        }
+
+        .etiquetas{
+          cursor: pointer;
+        }
+        .subrayado{
+            text-decoration: underline;
+        }
+        #div_apartados{
+          display: grid;
+          place-items: center;
+          margin-top: 17vh;
+          padding: 10px;
+          width: 100%;
+          height: 10vh;
+        }
+        hr{
+          width: 100%;
+          height: 1em;
+        }
+        .partir a{
+          width: 70%;
+        }
+        .ocultar{
+          display: none !important;
+        }
+        #div_apartados ul{
+          width: 90%;
+          margin: 0;
+          padding: 1.3em;
+        }
+        #div_apartados ul li{
+          font-size: 22px;
+        }
+        #Acompañantes{
+          padding-left: 20px;
+        }
+        #centrado{
+          height: 15vh;
+        }
+        .bloque{
+          margin-top: 0;
+        }
+        footer{
+          margin-top: 15vh;
+        }
+        #Queso_la_solana{
+          width: 80%;
+        }
+
+    </style>
+
+</head>
+<body>
+  <header>
+    <ul>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="40" height="40"  id="boton_menu">
+          <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+        </svg>
+      </li></svg>
+      <a href="../index.html">
+        <li><img src="../img/logo_2.png" alt="" id="logo"></li>
+      </a>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="40" height="40" id="boton_carrito"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg></li>
+    </ul>
+  </header>
+  <div id="div_menu_lateral">
+    <ul class="menu_lateral">
+      <a href="../index.html"><li>Incio</li></a>
+      <a href="sobre_nosotros.html"><li>Sobre nosotros</li></a>
+      <a href="productos.html"><li>Productos</li></a>
+      <a href="productos.html#tercero"><li>Ofertas</li></a>
+      <a href="productos.html#segundo"><li>Acompañantes</li></a>
+    </ul>
+  </div>
+  <div id="carrito">
+    <h1 id="titulo_carrito">Tus prductos</h1>
+    <ul id="lista_carrito"></ul>
+    <div class="flex_centrado">
+      <button class="pagar" id="pagar">Pagar</button>
+      <button class="pagar" id="limpiar">Limpiar Carrito</button>
+    </div>
+  </div>
+
+  <div id="div_apartados">
+    <ul class="apartados">
+        <li id="Todas" class="etiquetas subrayado">Todas</li>
+        <li id="Vinos" class="etiquetas " data-id="primero">Vinos</li>
+        <li id="Acompañantes" class="etiquetas " data-id="segundo">Acompañantes</li>
+        <li id="Ofertas" class="etiquetas " data-id="tercero">Ofertas</li>
+
+      </ul>
+      <hr>
+  </div>
+<a href="#div_apartados">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="50" height="50" fill="black" id="flecha"><path d="M318 177.5c3.8-8.8 2-19-4.6-26l-136-144C172.9 2.7 166.6 0 160 0s-12.9 2.7-17.4 7.5l-136 144c-6.6 7-8.4 17.2-4.6 26S14.4 192 24 192l72 0 0 288c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-288 72 0c9.6 0 18.2-5.7 22-14.5z"/></svg>
+</a>
+
+  <main>
+    <div id="primero">
+
+  <div id="centrado">
+    <h1 class="titulo_seccion" id="vinillo">Vinos</h1>
+  </div>
+    <div class="bloque sdo">
+        <div class="fila" id="primerilla">
+          <div class="producto">
+            <div class="partir">
+              <a href="detalles.html">
+                <div class="imagen ima_pr" id="Aalto_2022"></div>
+              </a>
+              <div class="descripcion">
+                <h1>Aalto 2022</h1>
+                <p>Un tinto de Ribera del Duero, con aromas a fruta negra y especias.</p>
+                <h2>20€</h2>
+              </div>
+            </div>
+            <button data-id="Aalto_2022" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+          </div>
+          <div class="producto">
+            <div class="partir">
+              <a href="detalles.html">
+                <div class="imagen ima_pr" id="Aalto_2022_Magnum"></div>
+              </a>
+              <div class="descripcion">
+                <h1>Aalto 2022 Magnum</h1>
+                <p>Un tinto de Ribera del Duero, potente y elegante.</p>
+                <h2>54€</h2>
+              </div>
+            </div>
+            <button data-id="Aalto_2022_Magnum" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+          </div>
+          <div class="producto">
+            <div class="partir">
+              <a href="detalles.html">
+                <div class="imagen ima_pr" id="alion_2018"></div>
+              </a>
+              <div class="descripcion">
+                <h1>Alion 2018</h1>
+                <p>Un tinto de Ribera del Duero con aromas a fruta roja y especias.</p>
+                <h2>46€</h2>
+              </div>
+            </div>
+            <button data-id="alion_2018" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+          </div>
+          <div class="producto">
+            <div class="partir">
+              <a href="detalles.html">
+                <div class="imagen ima_pr" id="blanco_1"></div>
+              </a>
+              <div class="descripcion">
+                <h1>Sauvignon blanc</h1>
+                <p>Un vino blanco fresco y afrutado, ideal para mariscos y ensaladas.</p>
+                <h2>25€</h2>
+              </div>
+            </div>
+            <button data-id="blanco_1" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+          </div>
+        </div>
+    </div>
+
+        <div class="bloque sdo" id="">
+          <div class="fila">
+            <div class="producto">
+              <div class="partir">
+          <a href="detalles.html">
+            <div class="imagen ima_pr" id="Macán_2019"></div>
+          </a>
+          <div class="descripcion">
+            <h1>Macán 2019</h1>
+            <p>Un vino tinto elegante y equilibrado de la Rioja.</p>
+            <h2>42€</h2>
+          </div>
+              </div>
+              <button data-id="Macán_2019" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+            <div class="producto">
+              <div class="partir">
+          <a href="detalles.html">
+            <div class="imagen ima_pr" id="Pago_de_Carraovejas_2022"></div>
+          </a>
+          <div class="descripcion">
+            <h1>Pago de Carraovejas 2022</h1>
+            <p>Un vino tinto potente y elegante de Ribera del Duero.</p>
+            <h2>34€</h2>
+          </div>
+              </div>
+              <button data-id="Pago_de_Carraovejas_2022" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+            <div class="producto">
+              <div class="partir">
+          <a href="detalles.html">
+            <div class="imagen ima_pr" id="Pago_de_Carraovejas_2022_Magnum"></div>
+          </a>
+          <div class="descripcion">
+            <h1>Pago de Carraovejas 2022 Magnum</h1>
+            <p>Un tinto de Ribera del Duero con gran capacidad de guarda.</p>
+            <h2>55€</h2>
+          </div>
+              </div>
+              <button data-id="Pago_de_Carraovejas_2022_Magnum" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+            <div class="producto">
+              <div class="partir">
+          <a href="detalles.html">
+            <div class="imagen ima_pr" id="pinitia_2017"></div>
+          </a>
+          <div class="descripcion">
+            <h1>Pinitia 2017</h1>
+            <p>Un vino tinto con carácter y profundidad.</p>
+            <h2>25€</h2>
+          </div>
+              </div>
+              <button data-id="pinitia_2017" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="bloque sdo">
+          <div class="fila">
+            <div class="producto">
+              <div class="partir">
+                <a href="detalles.html">
+                  <div class="imagen ima_pr" id="Rioja_Alta_Gran_Reserva"></div>
+                </a>
+                <div class="descripcion">
+                  <h1>Rioja Alta Gran Reserva</h1>
+                  <p>Un vino tinto clásico y refinado de la Rioja.</p>
+                  <h2>68€</h2>
+                </div>
+              </div>
+              <button data-id="Rioja_Alta_Gran_Reserva" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+            <div class="producto">
+              <div class="partir">
+                <a href="detalles.html">
+                  <div class="imagen ima_pr" id="Vega_Sicilia_Valbuena_2016"></div>
+                </a>
+                <div class="descripcion">
+                  <h1>Vega Sicilia Valbuena 2016</h1>
+                  <p>Un vino tinto de Ribera del Duero, potente y elegante.</p>
+                  <h2>79€</h2>
+                </div>
+              </div>
+              <button data-id="Vega_Sicilia_Valbuena_2016" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+            <div class="producto">
+              <div class="partir">
+                <a href="detalles.html">
+                  <div class="imagen ima_pr" id="Viña_Arana_Gran_Reserva_2016"></div>
+                </a>
+                <div class="descripcion">
+                  <h1>Viña Arana Gran Reserva 2016</h1>
+                  <p>Un vino tinto elegante y equilibrado de la Rioja.</p>
+                  <h2>30€</h2>
+                </div>
+              </div>
+              <button data-id="Viña_Arana_Gran_Reserva_2016" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+            <div class="producto">
+              <div class="partir">
+                <a href="detalles.html">
+                  <div class="imagen ima_pr" id="Viña_Tondonia_Tinto_Reserva_2012"></div>
+                </a>
+                <div class="descripcion">
+                  <h1>Viña Tondonia Tinto Reserva 2012</h1>
+                  <p>Un vino tinto con notas de fruta madura y especias.</p>
+                  <h2>50€</h2>
+                </div>
+              </div>
+              <button data-id="Viña_Tondonia_Tinto_Reserva_2012" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- Acompañantes -->
+
+        <div id="segundo">
+          <div id="centrado">
+            <h1 class="titulo_seccion">Acompañantes</h1>
+          </div>
+          <div class="bloque sdo">
+
+            <div class="fila">
+              <div class="card flex_centrado">
+                <a href="detalles.html">
+                  <img src="../img/jamon_reserva.png" class="card-img-top ima_pr" alt="Jamón reserva" id="jamon_reserva">
+                </a>
+                <div class="card-body">
+                  <h1 class="card-title">Jamón reserva</h1>
+                  <p>Jamón curado de alta calidad, perfecto para acompañar tus vinos favoritos.</p>
+                  <h2>100€</h2>
+                  <button data-id="jamon_reserva" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+                </div>
+              </div>
+
+              <div class="card flex_centrado">
+                <a href="detalles.html">
+                  <img src="../img/queso_oveja_curado.PNG" class="card-img-top ima_pr" alt="Queso oveja curado" id="queso_oveja_curado">
+                </a>
+                <div class="card-body">
+                  <h1 class="card-title">Queso oveja curado</h1>
+                  <p>Queso curado de oveja con un sabor intenso y una textura firme.</p>
+                  <h2>25€</h2>
+                  <button data-id="queso_oveja_curado" class="agregar_carrito"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+                </div>
+              </div>
+
+        
+        <div class="card flex_centrado" >
+          <a href="detalles.html">
+            <img src="../img/queso_oveja.PNG" class="card-img-top ima_pr" alt="Queso oveja" id="queso_oveja">
+          </a>
+          <div class="card-body">
+            <h1 class="card-title">Queso oveja</h1>
+            <p>Queso de oveja suave y cremoso, ideal para cualquier ocasión.</p>
+            <h2>47€</h2>
+            <button class="agregar_carrito" data-id="queso_oveja"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+          </div>
+        </div>
+
+
+        <div class="card flex_centrado " >
+        <a href="detalles.html">
+          <img src="../img/jamon_iberico_50.png" class="card-img-top ima_pr" alt="Jamón Ibérico 50%" id="jamon_iberico_50">
+        </a> 
+        <div class="card-body">
+          <h1 class="card-title">Jamón Ibérico 50%</h1>
+          <p>Jamón ibérico de bellota, con un sabor inigualable y una textura suave.</p>
+          <h2>55€</h2>
+          <button class="agregar_carrito" data-id="jamon_iberico_50"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>>
+        </div>
+        </div>
+        </div>
+  </div>
+
+
+  <div class="bloque sdo">
+  <div class="fila">
+    <div class="card flex_centrado" >
+      <a href="detalles.html">
+        <img src="../img/Queso_la_solana.png" class="card-img-top ima_pr" alt="Jamón reserva" id="Queso_la_solana"> 
+      </a>
+    <div class="card-body">
+      <h1 class="card-title">Queso la solana</h1>
+      <p>Queso madurado en aceite de oliva, perfecto para una velada magnifica.</p>
+      <h2>50€</h2>
+      <button class="agregar_carrito" data-id="Queso_la_solana"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+    </div>
+  </div>
+
+    <div class="card flex_centrado " >
+      <a href="detalles.html">
+      <img src="../img/Uva_roja_a_granel.png" style="width: 90%;" class="card-img-top ima_pr" alt="Uva roja a granel" id="Uva_roja_a_granel">
+      </a>
+    <div class="card-body">
+      <h1 class="card-title">Uva roja a granel</h1>
+      <p>Uvas rojas frescas y jugosas, perfectas para acompañar tus vinos.</p>
+      <h2>3€</h2>
+      <button class="agregar_carrito" data-id="Queso_la_solana"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+    </div>
+  </div>
+
+    <div class="card flex_centrado" >
+      <a href="detalles.html">
+        <img src="../img/Jamon_serrano_reserva.png" class="card-img-top ima_pr" style="width: 80%;" alt="Jamon serrano reserva" id="Jamon_serrano_reserva">
+      </a>
+    <div class="card-body">
+      <h1 class="card-title">Jamon serrano reserva</h1>
+      <p>Jamón serrano curado de sabor intenso, ideal para acompañar con un buen vino.</p>
+      <h2>30€</h2>
+      <button class="agregar_carrito" data-id="Jamon_serrano_reserva"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+    </div>
+  </div>
+
+    <div class="card flex_centrado" >
+      <a href="detalles.html">
+        <img src="../img/queso_manchrgo_DO.png" class="card-img-top ima_pr" alt="Jamon serrano reserva" id="queso_manchrgo_DO">
+      </a>
+    <div class="card-body">
+      <h1 class="card-title">Queso manchego</h1>
+      <p>Queso manchego con denominación de origen, ideal para acompañar con tintos.</p>
+      <h2>70€</h2>
+      <button class="agregar_carrito" data-id="queso_manchrgo_DO"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+    </div>
+    </div>
+
+    
+    </div>
+  </div>
+  
+</div>
+</div>
+
+<!-- Ofertas -->
+<div id="tercero">
+  <div id="centrado">
+    <h1 class="titulo_seccion">Ofertas</h1>
+  </div>
+  <div class="bloque" >
+
+    
+    <div class="fila">
+      <div class="card flex_centrado" style="width: 20rem; height: 35em;">
+        <a href="detalles.html"><img src="../img/lote1.PNG" class="card-img-top ima_pr" alt="Lote de vino + frutas + queso" id="lote1"></a>
+        <div class="card-body">
+        <h1 class="card-title">Lote de vino + frutas + queso</h1>
+        <p>Un lote perfecto para cualquier ocasión, incluye vino, frutas y queso gourmet.</p>
+        <h2>60€</h2>
+        <button class="agregar_carrito" data-id="lote1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+      </div>
+      </div>
+
+      <div class="card flex_centrado " style="width: 20rem; height: 35em;">
+        <a href="detalles.html"><img src="../img/lote2.PNG" class="card-img-top ima_pr" alt="Lote de vino y surtido de quesos" id="lote2"></a>
+        <div class="card-body">
+        <h1 class="card-title">Lote de vino y surtido de quesos</h1>
+        <p>Disfruta de una selección de vinos y quesos curados, ideal para compartir.</p>
+        <h2>70€</h2>
+        <button class="agregar_carrito" data-id="lote2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+        </div>
+      </div>
+
+      <div class="card flex_centrado " style="width: 20rem; height: 35em;">
+        <a href="detalles.html"><img src="../img/surtidos_ibericos.png" class="card-img-top ima_pr" style="width: 90%;" alt="surtido de embitidos ibericos" id="surtidos_ibericos"></a>
+        <div class="card-body">
+        <h1 class="card-title">Surtido de embutidos ibéricos</h1>
+        <p>Embutidos ibéricos de alta calidad, ideal para acompañar tus vinos favoritos.</p>
+        <h2>85€</h2>
+        <button class="agregar_carrito" data-id="surtidos_ibericos"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+        </div>
+      </div>
+
+
+      <div class="card flex_centrado " style="width: 20rem; height: 35em;">
+        <a href="detalles.html"><img src="../img/lote_vino_queso.png" class="card-img-top ima_pr" alt="surtido de embitidos ibericos" style="width: 90%;" id="lote_vino_queso"></a>
+        <div class="card-body">
+        <h1 class="card-title">Lote de vino + queso</h1>
+        <p>Un lote exquisito que combina vino con queso, ideal para un picoteo.</p>
+        <h2>35€</h2>
+        <button class="agregar_carrito" data-id="lote_vino_queso"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30" fill="white" ><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg><span>Añadir al carrito</span></button>
+        </div>
+        </div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+    <div class="bloque" id="bloque_f">
+
+      <div class="columna">
+
+        <div class="mitad columna" id="mitad1">
+          <div>
+            <h1>CONTACTO</h1>
+            <p>Email: vinospatodos@gmail.com</p>
+            <p>Tel: 883 456 573</p>
+            <p>Dirección: Calle Mayor 45, Madrid, España</p>
+          </div>
+        </div>
+        <div class="mitad columna" id="mitad2">
+          <div >
+            <h1>HORARIO</h1>
+            <p>Lun - Vie: 8:00 - 20:00</p>
+            <p>Sábado: 9:00 - 19:00</p>
+            <p>© Derechos reservados para mí</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="columna">
+        <div class="mitad columna">
+          <div>
+            <h1>Enlaces</h1>
+            <ul class="menu_footer">
+                <a href="../index.html"><li>Incio</li></a>
+                <a href="sobre_nosotros.html"><li>Sobre nosotros</li></a>
+                <a href="productos.html"><li>Productos</li></a>
+                <a href="productos.html#tercero"><li>Ofertas</li></a>
+                <a href="productos.html#segundo"><li>Acompañantes</li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="mitad columna">
+          <div class="formu">
+            <textarea name="" id="mensaje" placeholder="¡Déjanos tu mensaje!" id=""></textarea>
+            <button id="enviar" class="pagar">Enviar</button>
+          </div>
+          <div class="flex_centrado">
+            <a href="https://www.instagram.com/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  width="50" height="50" fill="white"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+
+            <a href="https://www.facebook.com/?locale=es_ES">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50" height="50" fill="white"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+            </a>
+
+            <a href="https://x.com/?lang=es&mx=2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50" height="50" fill="white"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></svg>
+            </a>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</body>
+</html>

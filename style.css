@@ -1,0 +1,1007 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgba(240, 240, 240, 1) !important;
+    position: absolute;
+    width: 100%;
+    overflow-x: hidden;
+}
+header{
+    height: 15vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    z-index: 999;
+}
+
+.al90{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    list-style: none;
+    padding: 2em;
+}
+header ul a{
+    width: auto;
+}
+.banner{
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+    height: 90vh !important;
+    position: relative;
+    overflow: hidden;
+
+}
+.caja_slogan{
+    position: relative !important;
+    top: 17em;
+    text-align: left !important;
+    width: 60%;
+}
+.slogan{
+    position: relative;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 5em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    width: 50%;
+}
+.boton_slogan{
+    width: 12em;
+    height: 3em;
+    background-color: white;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4c0d0d;
+    border: none;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+.boton_slogan:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: solid 3px white;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+.bloque{
+    margin-top: 5em;
+    width: 100% !important;
+    height: 100vh;
+}
+#banner1{
+    background-image: url('img/banner5.png');
+}
+#banner2{
+    background-image: url('img/banner.jpg');
+}
+#banner3{
+    background-image: url('img/banner4.jpg');
+}
+.caja_slogan a{
+    width: 12em !important;
+}
+#div_menu_lateral{
+    position: fixed;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.598);
+    z-index: 990;
+    left: -30%;
+    width: 30%;
+    transition: 0.3s;
+    display: none;
+    place-items: center;
+}
+.quitar{
+    background-color: white;
+    border: none;
+    margin-left: 10px;
+}
+.activo{
+    display: grid !important;
+}
+#lista_carrito{
+    border: solid 1px;
+    height: auto;
+    display: grid;
+    place-items: center;
+    height: 35em;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 3em;
+}
+#titulo_carrito{
+    position: relative;
+    top: 2.5em;
+}
+#info_carrito{
+    display: grid;
+}
+#info_precio{
+    margin-left: 0 !important;
+}
+#lista_carrito li span{
+    width: 50%;
+    margin-bottom: 20px;
+    margin-right: -5px;
+    height: 4em;
+    width: 8em;
+}
+.pagar{
+    border: none;
+    height: 3em;
+    width: 12em;
+    font-family: sans-serif;
+    color: white;
+    font-size: 18px;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+    background-color: #0667a3;
+    margin: 20px;
+}
+#limpiar{
+    background-color: #a31006;
+}
+.pagar:hover{
+    color: #0667a3;
+    background: white;
+    border:solid 1px #0667a3;
+    transform: scale(1.1);
+}
+#limpiar:hover{
+    background-color: white;
+    color: #a31006;
+    border:solid 1px #a31006;
+    transform: scale(1.1);
+}
+#lista_carrito li{
+    width: 90%;
+    display: grid;
+    place-items: center;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom:solid 1px #333333;
+    margin-bottom: 20px;
+}	
+#carrito{
+    position: fixed;
+    min-height: 100vh;
+    background-color: white;
+    z-index: 990;
+    left: 75%;
+    width: 25%;
+    transition: 0.3s;
+    display: none;
+    place-items: center;
+    align-items: center;
+    animation-name: abajo;
+    animation-play-state: paused;
+    animation-duration: 1s;
+    border-left: solid 1px;
+}
+#boton_menu{
+    z-index: 999;
+    cursor: pointer;
+}
+.menu_lateral{
+    width: 67%;
+    display: grid;
+    place-items: center;
+    height: 50%;
+}
+a{
+    color: white;
+    text-decoration: none !important;
+    width: 100%;
+    display: grid;
+    place-items: center
+}
+
+.menu_lateral a{
+    color: white;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+.menu_lateral a:hover{
+    color: #C19A6B;
+}
+li img{
+    width: 7em;
+    height: 7em;
+    filter: invert(1);
+}
+#centrado{
+    display: grid !important;
+    place-items: center;
+    bottom: 16em;
+}
+#segundo_banner{
+    left: 48em;
+    top: 24em;
+}
+#slogan_2{
+    width: 51%;
+    left: 5em;
+}
+#boton_slogan_2{
+    position: relative;
+    left: 22.5em;
+}
+#tercer_banner{
+    left: 20em;
+    position: relative !important;
+    top: -7em;
+    text-align: center !important;
+    display: grid !important;
+    place-items: center;
+    width: 60%;
+}
+#flecha{
+    position: fixed;
+    top: 90vh;
+    left: 90%;
+    z-index: 100;
+  }
+#boton_slogan_3{
+    right: 0;
+    left: 0;
+}
+#slogan_3{
+    width: 100%;
+}
+.fila{
+    width: 100%;
+    height: 40em;
+    display: grid;
+    place-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,1fr);
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+#mas_vendidos{
+    position: relative;
+    animation-name: aderecha;
+    animation-play-state: paused;
+    animation-duration: 2s;
+}
+#mas_vendidos_acompañantes{
+    position: relative;
+    animation-name: aizquierda;
+    animation-play-state: paused;
+    animation-duration: 2s;
+}
+
+/*Productos*/
+.card:hover{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+    transition: 550ms;
+}
+.card{
+    padding: 0 !important;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 0 !important;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+
+.card-body p{
+    height: 3em;
+}
+.card-body h1{
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #4c0d0d;
+    margin-top: 0.4em;
+    width: 90%;
+    height: 2.3em;
+}
+.card img:hover{
+    cursor: pointer;
+    transition: 550ms;
+    transform: scale(1.05);
+}
+.card img{
+    height: 17em;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+.fila .card{
+    width: 70%;
+    height: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    display: grid;
+    place-items: center;
+}
+.producto{
+    background-color: white;
+    display: grid;
+    place-items: center;
+    width: 70%;
+    height: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+    overflow: hidden;
+}
+.producto:hover{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+    transition: 550ms;
+}
+.imagen{
+    background-size: cover;
+    background-position: center;
+    width: 70%;
+    height: 23em;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+
+.imagen:hover{
+    cursor: pointer;
+    transition: 550ms;
+    transform: scale(1.05);
+}
+
+.descripcion h1{
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #4c0d0d;
+    margin-top: 0.4em;
+    width: 90%;
+}
+p{
+    color: #666
+}
+.descripcion p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 3;
+}
+.descripcion{
+    display: grid;
+    place-items: start;
+    width: 60%;
+    height: 22em;
+    text-align: left;
+    border-left:solid 1px #4c0d0dc3 ;
+    border-bottom:solid 1px #4c0d0dc3 ;
+    padding: 20px;
+}
+h2{
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #C19A6B;
+}
+/*BOTONES*/
+.agregar_carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    background-color: #4c0d0d;
+    border: none;
+    font-family: sans-serif;
+    color: white;
+    font-size: 16px;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+.agregar_carrito:hover span{
+    border-color: #4c0d0d;
+    transition: 550ms;
+}
+.agregar_carrito:hover svg{
+    fill: #4c0d0d;
+    transition: 550ms;
+}
+.agregar_carrito:hover{
+    cursor: pointer;
+    transition: 550ms;
+    background-color: white;
+    border: 1px solid #4c0d0d;
+    color: #4c0d0d;
+}
+
+.ir_a{
+    width: 15em;
+    height: 3em;
+    background-color: #C19A6B;
+    color: white;
+    border: none;
+    font-family: sans-serif;
+    color: white;
+    font-size: 16px;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+.ir_a:hover{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #C19A6B;
+    color: #C19A6B;
+}
+
+#Aalto_2022{
+    background-image: url('img/Aalto_2022.png');
+}
+#Aalto_2022_Magnum{
+    width: 60%;
+    background-image: url('img/Aalto_2022_Magnum .png');
+}
+#alion_2018{
+    background-image: url('img/alion_2018.png');
+}
+#blanco_1{
+    height: 27em;
+    background-image: url('img/blanco_1.png');
+}
+#Macán_2019{
+
+    background-image: url('img/Macán_2019.png');
+}
+#Pago_de_Carraovejas_2022{
+
+    background-image: url('img/Pago_de_Carraovejas_2022.png');
+}
+#Pago_de_Carraovejas_2022_Magnum{
+
+    background-image: url('img/Pago_de_Carraovejas_2022_Magnum.png');
+}
+#pinitia_2017{
+    width: 60%;
+    background-image: url('img/pinitia_2017.png');
+}
+#Rioja_Alta_Gran_Reserva{
+    background-image: url('img/Rioja_Alta_Gran_Reserva.png');
+}
+#Vega_Sicilia_Valbuena_2016{
+    background-image: url('img/Vega_Sicilia_Valbuena_2016.png');
+}
+#Viña_Arana_Gran_Reserva_2016{
+    background-image: url('img/Viña_Arana_Gran_Reserva_2016.png');
+}
+#Viña_Tondonia_Tinto_Reserva_2012{
+    background-image: url('img/Viña_Tondonia_Tinto_Reserva_2012.png');
+}
+.partir a{
+    width: 70%;
+  }
+.partir{
+    display: flex;
+    width: 100%;
+    height: 15em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo_seccion{
+    font-size: 4em;
+    color: #333333;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.agregar_carrito span{
+    width: 50%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: solid 4px white;
+    margin-left: 13px;
+    text-decoration: none;
+    font-weight: bold
+}
+.flex_centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ofertas_index{
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/fondo_oferta2.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+#slogan_oferta{
+    width: 70%;
+}
+
+.al90 .caja_slogan{
+    width: 50%;
+    top: 0;
+}
+#jamon_reserva{
+    width: 40%;
+}
+
+/*footer*/
+#bloque_f{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2,1fr);
+    height: 70vh;
+}
+.columna{
+    height: 70vh;
+    background-color: #4c0d0d;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    color: white;
+}
+.mitad{
+    height: 35vh;
+}
+.mitad .flex_centrado svg{
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+}
+.mitad .flex_centrado svg:hover{
+    transform: scale(1.1);
+}
+.mitad .flex_centrado{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mitad div{
+    text-align: center;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    height: 70%;
+}
+.mitad div h1{
+font-size: 4em;
+width: 100%;
+}
+.mitad div p{
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    width: 100%;
+}
+.menu_footer{
+    padding: 0;
+    margin-top: 10px !important;
+    justify-content: unset;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu_footer a:hover{
+    color: #C19A6B;
+}
+.menu_footer a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    width: auto;
+}
+
+
+#mitad1{
+    background-color: #591313;
+}
+#mitad2{
+    background-color: #5e1515;
+}
+.imagen_grande{
+    position: relative;
+    right: 20%;
+    height: 100%;
+    width: 22%;
+}
+.informacion{
+    display: grid;
+    height: 80%;
+    width: 70%;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+.quantity-selector button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+.quantity {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.mas_menos{
+    width: 25%;
+    border: none;
+}
+.cantid{
+    width: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+    height: 3em;
+}
+.cantidad{
+    height: 3em;
+    width: 100%;
+    display: flex;
+    background-color: rgb(240,240,240);
+}
+/*Sobre nosotros*/
+#sobre_nosotros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('img/sobre_nosotros.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#boton_carrito{
+    fill: black;
+    cursor: pointer;
+  }
+  #boton_menu{
+    fill: black;
+  }
+.cartas_oferta{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2,1fr);
+}
+.cartas_oferta .card{
+    width: 70%;
+}
+.formu{
+    margin-top: 3em;
+}
+textarea{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: 60%;
+    color: white;
+    border-bottom: solid 2px white;
+    font-size: 20px !important;
+    height: 2em;
+}
+textarea::placeholder{
+    color: white;
+    font-size: 20px;
+}
+#enviar{
+    background-color: white;
+    color: #4c0d0d;
+    width: 10em;
+    height: 2.5em;
+}
+#enviar:hover{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: solid 1px white;
+    width: 10em;
+    height: 2.5em;
+}
+@keyframes aizquierda{
+    from{
+        left: 200%;
+    }
+    to{
+        left: 0;
+    }
+}
+@keyframes aderecha{
+    from{
+        right: 200%;
+    }
+    to{
+        right: 0;
+    }
+}
+@keyframes abajo{
+    from{
+        bottom: 100%;
+    }
+    to{
+        bottom: 0;
+    }
+}
+@keyframes arriba{
+    from{
+        bottom: 0;
+    }
+    to{
+        bottom: 100%;
+    }
+}
+
+@media (max-width:1500px){
+    .caja_slogan{
+        top: 13.6em;
+    }
+    .slogan{
+        font-size: 4em;
+    }
+    .boton_slogan{
+        width: 10em;
+        height: 3em;
+        font-size: 16px;
+    }
+    #segundo_banner{
+        left: 37em;
+        top: 16em;
+    }
+    #tercer_banner{
+        top: -3em;
+        width: 70%
+    }
+    #boton_slogan_2{
+        position: relative;
+        left: 20.1em;
+    }
+    .boton_slogan:hover{
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        border: solid 3px white;
+        height: 3em;
+        width: 10em;
+        font-size: 16px;
+
+    }
+    .producto{
+        width: 87%;
+        height: 90%;
+    }
+    .fila{
+        height: 33em;
+    }
+    .descripcion{
+        height: 20em;
+    }
+    .descripcion p{
+        font-size: 15px;
+    }
+    #alion_2018{
+        height: 20em;
+        background-image: url('img/alion_2018.png');
+    }
+    #blanco_1{
+        height: 21em;
+        background-image: url('img/blanco_1.png');
+    }
+    .agregar_carrito svg{
+        width: 30px;
+        height: 30px;
+    }
+    .partir{
+        height: 17em;
+    }
+    .agregar_carrito span{
+        font-size: 14px;
+    }
+    .agregar_carrito{
+        font-size: 14px;
+    }
+    .imagen{
+        height: 20em;
+    }
+}
+
+@media (max-width:800px){
+    #principal{
+        width: 90% !important;
+    }
+    header{
+        height: 15vh !important;
+    }
+    header ul{
+        height: 15vh !important;
+    }
+    #vinillo{
+        top: 0;
+    }
+    .producto{
+        height: 25em !important;
+        margin: 10px;
+    }
+    a{
+        font-size: 20px !important;
+        text-align: center;
+    }
+    .bloque{
+        height: auto !important;
+        margin-top: 0 !important;
+    }
+    #boton_menu{
+        fill: black !important;
+    }
+    #boton_carrito{
+        fill: black !important;
+    }
+    #logo{
+        filter: invert(0) !important;
+    }
+    #carouselExampleCaptions{
+        display: none;
+    }
+    .card{
+        height: 30em !important;
+        margin: 10px;
+    }
+    .producto h1{
+        height: 2.5em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+    #primerilla{
+        margin-top: 0;
+    }
+    .fila{
+        padding: 30px;
+        margin-top: 20em;
+        grid-template-columns: repeat(2,1fr);
+        height: auto !important;
+    }
+    #div_menu_lateral{
+        width: 50%;
+        left: -50%;
+    }
+    .fila .card{
+        width: 85%;
+    }
+    #ofertas_index{
+        margin-top: 25em !important;
+        height: 70em !important;
+    }
+    .cartas_oferta{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cartas_oferta .card{
+        width: 65% !important;
+    }
+    .card img{
+        height: 10em !important;
+    }
+    .card-body{
+        display: grid;
+    }
+    .card-body p{
+        height: 3em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 1;
+        margin-top: 15px;
+    }
+    .card-body h1{
+        font-size: 18px;
+        height: 1.3em;
+    }
+    .centrado{
+        position: relative;
+    }
+    .agregar_carrito svg{
+        width: 1.5em !important;
+        height: 1.5em !important;
+    }
+    .slogan{
+        font-size: 2.5em;
+    }
+    .titulo_seccion{
+        position: relative;
+        top: 6em;
+        font-size: 3em;
+        text-align: center;
+    }
+    .boton_slogan{
+        width: 12em;
+        height: 4em;
+        font-size: 12px;
+    }
+    .ir_a{
+        margin-top: 40px;
+    }
+    .card{
+        margin: 30px;
+    }
+    .flex_centrado a{
+        margin: 20px;
+    }
+    #carrito{
+        left: 30%;
+        width: 70%;
+    }
+    footer{
+        margin-top: 8em ;
+    }
+    .boton_slogan:hover{
+        width: 12em;
+        height: 4em;
+        font-size: 12px;
+    }
+    .al90 .caja_slogan{
+        width: 70%;
+    }
+    #slogan_oferta{
+        width: 90%;
+    }
+    .caja_slogan a{
+        width: 7em !important;
+    }
+    .producto{
+        width: 87%;
+        height: 90%;
+    }
+    .fila{
+        height: 28em;
+    }
+    .descripcion{
+        height: 15em;
+    }
+    .descripcion p{
+        font-size: 12px;
+    }
+    #alion_2018{
+        height: 15em;
+        background-image: url('img/alion_2018.png');
+    }
+    #blanco_1{
+        height: 16em;
+        background-image: url('img/blanco_1.png');
+    }
+    #Pago_de_Carraovejas_2022{
+        width: 90%;
+    }
+    .agregar_carrito svg{
+        width: 10px;
+        height: 20px;
+    }
+    .partir{
+        height: 12em;
+    }
+    .agregar_carrito span{
+        font-size: 14px;
+    }
+    .agregar_carrito{
+        font-size: 14px;
+    }
+    .imagen{
+        height: 15em;
+    }
+
+}
